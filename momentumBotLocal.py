@@ -4,12 +4,19 @@ import logging
 import time
 import pandas as pd
 from alpaca_trade_api.rest import REST, TimeFrame
+from dotenv import load_dotenv
+
+# Load environment variables from .env file
+load_dotenv()
 
 # Configure logging
 logging.basicConfig(
     level=logging.INFO,
     format="%(asctime)s [%(levelname)s] %(message)s",
-    handlers=[logging.StreamHandler()]
+    handlers=[
+        logging.StreamHandler(),
+        logging.FileHandler("momentum_bot.log")
+    ]
 )
 
 API_KEY = os.getenv('API_KEY')
