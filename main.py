@@ -22,7 +22,7 @@ def bot_loop():
                 logging.info("Market closed. Sleeping...")
         except Exception as e:
             logging.error(f"Bot crashed: {e}")
-        time.sleep(15)  # Run every 15 seconds
+        time.sleep(60)  # Run every 60 seconds
 
 @app.on_event("startup")
 def startup_event():
